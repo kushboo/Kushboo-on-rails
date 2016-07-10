@@ -15,9 +15,5 @@ Vagrant.configure('2') do |config|
   end
 
   config.vm.provider 'virtualbox'
-
-  config.vm.provision 'shell' do |shell_file|
-    shell_file.path "provision/install_ruby_and_rails.sh"
-  end
-
+  config.vm.provision :shell, path: "provision/install_ruby_and_rails.sh"
 end
