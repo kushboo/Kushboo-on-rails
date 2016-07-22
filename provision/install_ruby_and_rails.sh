@@ -1,6 +1,9 @@
 echo "Installing Ruby dependencies"
   sudo apt-get update
-  sudo apt-get install git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev python-software-properties libffi-dev -y
+  sudo apt-get install git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev postgresql postgresql-contrib libpq-dev libxml2-dev libxslt1-dev libcurl4-openssl-dev python-software-properties libffi-dev -y
+  sudo -u postgres createuser --superuser vagrant
+  sudo -u postgres createdb -O vagrant activerecord_unittest
+  sudo -u postgres createdb -O vagrant activerecord_unittest2
 
 echo "Installing Ruby 2.3.1 from source code"
   cd
